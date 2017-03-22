@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function initialize()
+{
+  var mapProp = {
+    center: new google.maps.LatLng(30.9100, 75.8500),
+    zoom:20,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+  };
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+
+function loadScript()
+{
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "http://maps.googleapis.com/maps/api/js?key=&sensor=false&callback=initialize";
+  document.body.appendChild(script);
+}
+</script>
+</head>
+
+<body>
+<button name="showMap" onclick="loadScript()" type="button" >showMap</button>
+<p>Some text.</p>
+<div id="googleMap" style="width:500px;height:500px;"></div>
+</body>
+</html>

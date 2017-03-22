@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="response.si"></script>
+</head>
+    <body>
+    <p id="weather">Here's the weather:<p>
+
+    <button onclick="b()">Submit</button>
+     
+    <script>
+         function b(){
+            // $.getJSON("http://localhost/exp/response.si?callback=?", function(jsonStr) {
+            //   console.log(jsonStr);
+            //   $('#weather').html('and the temperature is: ' + jsonStr.currently.temperature);
+            // });
+		alert(jsonStr.currently.temperature);
+        }
+    </script>
+
+    </body>
+</html>

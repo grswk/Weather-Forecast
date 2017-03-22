@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Predictor</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8 " />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+<style>
+	html, body {
+	background-image:url(images/The-Road-Ahead.png);
+	background-position:center;
+	background-size:cover;
+	height:100%;
+	}
+	
+	.container {
+		
+		width:100%;
+		height:100%;
+		background-size:cover;
+		background-position:center;
+		padding-top:100px;
+		
+	}
+
+		p {
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	
+	button {
+		margin-top:20px;
+	}
+	
+	.center {
+		text-align:center;
+	
+	}
+	
+	.white {
+		color:white;
+	}
+
+	.pad {
+		padding-top:20px;	
+		}
+	
+	#footer {
+    background-color:white;
+    color:green;
+    clear:both;
+    text-align:center;
+    padding:5px;	
+	}
+	#menu ul {
+	margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+	padding-top:25px;
+	padding-left:10px;
+	}
+
+	#menu li {
+
+    list-style: none;
+    float: left;
+    margin-right: 0.5em;
+	}
+
+	#menu a {
+
+    display: block;
+    width: 8em;
+    color: white;
+    background-color:inherit;
+    text-decoration: none;
+    text-align: center;
+	}
+
+	#menu a:hover {
+
+    background-color: #6666AA;
+	}
+   
+	.sear {
+
+		float:right;
+		padding-right:5px;
+	}
+
+
+</style>		
+</head>
+
+<body>
+	
+	<h1 class="white center pad">Welcome to Weather Predictor</h1>
+		<div id="menu" class="lead">
+    <ul>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="Registration.html">Register</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+    </ul>
+		</div>
+
+			<form class="navbar-form navbar-right sear" role="search" action="">
+    			<div class="form-group">
+        			<input type="text" class="form-control" placeholder="Search">
+    			</div>
+    			<button type="submit" class="btn-success btn btn-default">Submit</button>
+			</form>
+
+	<div class="container">
+	
+		<div class="row">
+			
+			<div class="col-md6 col-md-offset-3 center">
+	
+				<h1 class="center white">Weather Predictor</h1>
+				
+				<p class="lead center white pad">Enter your City To Find Weather</p>
+				
+				<form>
+				
+					<div class="form-group lead">
+					
+						<input type="text" class="form-control" name="city" id="city" placeholder="Eg. London, Delhi, Paris "/>
+				
+				
+			        </div>
+			
+					<button class="btn btn-success btn-lg">Find The Weather</button>
+			
+			    </form>
+			 
+			</div>
+		
+		</div>		
+		
+	</div>	
+	
+<!--	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+-->
+	<div id="footer">
+		Copyright © WeatherPredictor.com	
+	</div>
+</body>
+</html>

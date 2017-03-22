@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Predictor</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8 " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.min.old.css" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+
+    <!--For dummy data -->
+    <script src='response.si'></script>
+    <!---->
+    <style>
+        html,
+        body {
+            background-image: url(images/The-Road-Ahead.png);
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            height: 88%;
+            background-size: cover;
+            background-position: center;
+            padding-top: 30px;
+        }
+        .center {
+            text-align: center;
+        }
+        
+        .white {
+            color: white;
+        }
+        
+        /*.pad {
+            padding-top: 20px;
+        }*/
+        
+        #footer {
+            background-color: white;
+            color: green;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #menu ul {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            padding-top: 25px;
+            padding-left: 10px;
+        }
+        
+        #menu li {
+            list-style: none;
+            float: left;
+            margin-right: 0.5em;
+        }
+        
+        #menu a {
+            display: block;
+            width: 8em;
+            color: white;
+            background-color: inherit;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        #menu a:hover {
+            background-color: #6666AA;
+        }
+    </style>
+
+    <style type="text/css">
+        
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-color: #999;
+            display: block;
+        }
+        
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 0px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #999;
+            color: #444;
+            background-color: #F7FDFA;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+        }
+        
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 0px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #999;
+            color: #fff;
+            background-color: #26ADE4;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+        }
+        
+        .tg .tg-vn4c {
+            background-color: #D2E4FC
+        }
+        
+        .tg .tg-9vto {
+            font-family: Verdana, Geneva, sans-serif !important;
+        }
+    </style>
+
+    <script>
+        function fetchWeather() {
+            //alert("Clicked");
+            $("#bodyMain").html("Loading...");
+            var apiKey = 'ef83a8bd6e9af7fa4d7da0bbdd20fe9f';
+            var url = 'https://api.forecast.io/forecast/';
+            var lati = 30.9100;
+            var longi = 75.8500;
+
+            // For dummy data 
+            var dummy = true;
+            // alert("on if");
+            if (dummy == true) {
+                 // $.getJSON("http://localhost/exp/response.si" + "?callback=?", function(jsonStr) {
+                   console.log(jsonStr);
+                   // alert(jsonStr);
+                    //current weather
+                    // $('#sum-current').html(jsonStr.currently.summary);
+                    // $('#temp-current').html(jsonStr.currently.temperature);
+                    // $('#ws-current').html(jsonStr.currently.windSpeed);
+                    // $('#press-current').html(jsonStr.currently.pressure);
+                    // //alert(jsonStr.daily.data[]0].summary);
+                    // //day1
+                    // var j = 1;
+                    // for (var i = 0; i <= 8; i++) {
+                    //     //alert(i);
+                    //     j = i + 1;
+                    //     $('#sum-day' + j).html(jsonStr.daily.data[i].summary);
+                    //     $('#tempMin-day' + j).html(jsonStr.daily.data[i].temperatureMin);
+                    //     $('#tempMax-day' + j).html(jsonStr.daily.data[i].temperatureMax);
+                    //     $('#humi-day' + j).html(jsonStr.daily.data[i].humidity);
+                    //     $('#ws-day' + j).html(jsonStr.daily.data[i].windSpeed);
+                    //     $('#press-day' + j).html(jsonStr.daily.data[i].pressure);
+                    // };
+
+                    $('#result').html(jsonStr.currently.summary);
+                    
+                //});
+            }
+            else{
+                alert('in not dummy');
+	            // $.getJSON(url + apiKey + "/" + lati + "," + longi + "?units=si&callback=?", function(jsonStr) {
+	            //     //console.log(jsonStr);
+	            //     //current weather
+	            //     $('#sum-current').html(jsonStr.currently.summary);
+	            //     $('#temp-current').html(jsonStr.currently.temperature);
+	            //     $('#ws-current').html(jsonStr.currently.windSpeed);
+	            //     $('#press-current').html(jsonStr.currently.pressure);
+	            //     //alert(jsonStr.daily.data[]0].summary);
+	            //     //day1
+	            //     var j = 1;
+	            //     for (var i = 0; i <= 8; i++) {
+	            //         //alert(i);
+	            //         j = i + 1;
+	            //         $('#sum-day' + j).html(jsonStr.daily.data[i].summary);
+	            //         $('#tempMin-day' + j).html(jsonStr.daily.data[i].temperatureMin);
+	            //         $('#tempMax-day' + j).html(jsonStr.daily.data[i].temperatureMax);
+	            //         $('#humi-day' + j).html(jsonStr.daily.data[i].humidity);
+	            //         $('#ws-day' + j).html(jsonStr.daily.data[i].windSpeed);
+	            //         $('#press-day' + j).html(jsonStr.daily.data[i].pressure);
+	            //     }
+	            // });
+			}
+				
+            // document.getElementById('bodyMain').style.display='none';
+            // document.getElementById('table').style.display='block';
+        	}
+    </script>
+
+</head>
+
+<body>
+
+    <!-- <h1 class="white center pad">Welcome to Weather Predictor</h1> -->
+    <div id="menu" class="lead">
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="Registration.html" target="_blank">Register</a></li>
+            <li><a href="contactus.html" target="_blank">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md6 col-md-offset-3 center">
+                <h1 class="center white">Weather Predictor</h1>
+                <p class="lead center white pad">Enter your City To Find Weather</p>
+                <!-- <div class="form-group lead">
+                    <input type="text" class="form-control" name="search" id="search" placeholder="Eg. London, Delhi, Paris">
+                </div>
+                <button class="btn btn-success btn-lg" id="getCords" onClick="codeAddress();">Find The Weather</button> -->
+
+                <!--For dummy data -->
+                <button class="btn btn-success btn-lg" id="getDummyWeather" onClick="fetchWeather();">Dummy Weather</button>
+
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyright © WeatherPredictor.com
+    </div>
+
+</body>
+
+</html>
